@@ -1,0 +1,29 @@
+{
+  "name": "conceptnet",
+  "version": "0.0.1",
+  "description": "A Bridge to Conceptnet 4 DB",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha ./test/ -R spec"
+  },
+  "keywords": [
+    "conceptnet"
+  ],
+  "author": "Rob Ellis",
+  "license": "MIT",
+  "dependencies": {
+    "mysql": "~2.2.0",
+    "debug": "~0.8.1",
+    "knex": "~0.5.13",
+    "async": "~0.7.0",
+    "underscore": "~1.6.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.18.2",
+    "should": "~3.3.1"
+  }
+}
