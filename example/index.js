@@ -1,10 +1,11 @@
 var concept = require("../index")();
+var _ = require("underscore");
 
-concept.constructSurface("hammer", "build", function(err, res){
-	// We are going to cheat and just return the sentense.
-	// var x = getRandomInt(0,res.length - 1)
-	console.log(err, res);
-});
+// concept.constructSurface("hammer", "build", function(err, res){
+// 	// We are going to cheat and just return the sentense.
+// 	// var x = getRandomInt(0,res.length - 1)
+// 	console.log(err, res);
+// });
 
 // concept.hasPrerequisiteForward("smoke", function(err, res){
 // 	console.log("Pre", res);
@@ -14,18 +15,39 @@ concept.constructSurface("hammer", "build", function(err, res){
 // 	console.log("Cause", res);
 // });
 
-// // Finds the intersection of two concepts
-// concept.relatedConcepts("cat", "mouse", function(err, res){
+// Finds the intersection of two concepts
+// concept.relatedConcepts("tea", "coffee", function(err, res){
 // 	console.log("Related", res);
 // });
 
+concept.relatedConceptsArray(["tea", "coffee"], function(err, res){
+	console.log("Related", res);
+});
+
 // // What is the color of the ocean
-// concept.resolveFact("animal", "milk", function(err, res){
+// concept.isAReverse("plant flower", function(err, res){
 // 	console.log("animal + milk", res);
 // });
 
-// concept.resolveFact("color", "sky", function(err, res){
-// 	console.log("color + sky", res);
+// concept.assersionTest("fly south", "bird", function(err, res){
+// 	console.log(res);
+// });
+
+// concept.isAForward("sunset", function(err, res){
+// 	console.log(res);
+// });
+
+// concept.atLocationForward("pacific ocean", function(err, res){
+// 	console.log("season", res);
+// });
+
+// concept.conceptLookup("When do birds fly south?", function(err, concepts){
+// 	console.log("CL: When do birds fly south?")
+// 	console.log(concepts);
+// })
+
+// concept.isAReverse("cube", function(err, res){
+// 	console.log("cube", res);
 // });
 
 // concept.hasPropertyForward("toolbox", function(err, res){
