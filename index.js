@@ -297,6 +297,19 @@ var relatedConcepts = function(term1, term2, callback) {
   });
 }
 
+// Return an array of items with the filterSet removed
+var filterConcepts = function(items, filter, callback) {
+
+  var itor = function(item, done) {
+    assersionTest(item, filter, done);
+  }
+
+  async.map(items, itor, function(err, data) {
+    var newList = _.filter(items, function(k,v) { return (data[v] !== 0 && !isNaN(data[v])) });
+    callback(null, newList);
+  });
+}
+
 var constructSurface = function(term1, term2, callback) {
   getAssertion(term1, term2, function(err, fullconcept){
     var x = getRandomInt(0, fullconcept.length - 1);
@@ -353,6 +366,8 @@ module.exports = function(options) {
     conceptLookup: conceptLookup,
     resolveFact:  resolveFact,
     resolveFacts: resolveFacts,
+
+    filterConcepts: filterConcepts,
 
     assersionTest: assersionTest,
     assertionLookupForward: assertionLookupForward

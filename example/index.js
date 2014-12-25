@@ -20,7 +20,12 @@ var _ = require("underscore");
 // 	console.log("Related", res);
 // });
 
-concept.relatedConceptsArray(["tea", "coffee"], function(err, res){
+// concept.relatedConceptsArray(["tea", "coffee"], function(err, res){
+// 	console.log("Related", res);
+// });
+
+// return an array of items 
+concept.filterConcepts(["tea", "coffee", "sand", "rocks"],"drink", function(err, res){
 	console.log("Related", res);
 });
 
